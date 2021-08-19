@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 50%;
+    }
+
+    .toggle {
+        border-radius: 8px;
+        cursor: pointer;
+        background: #1c6454;
+        color: white;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+
+    .toggle:hover {
+        background: red;
+        transition: .4s;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: row;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: 1s;
+    }
+
+    .items>a {
+        text-decoration: none;
+        display: flex;
+        color: green;
+        background: grey;
+        height: 80px;
+        width: 80px;
+        justify-content: center;
+        align-items: center;
+        text-transform: none;
+        transition: .4s;
+
+    }
+
+    /* #click:checked ~ .menu .toggle{border-radius: 30px 0 0 30px;}
+    #click:checked ~ .menu #last-item{border-radius: 0 30px 30px 0;} */
+    #click:checked ~ .menu .toggle{
+        /* width: 0; */
+        /* float: right; */
+        display: none;
+    }
+    input {
+        display: none;
+    }
+</style>
+
+<body>
+    <input type="checkbox" id="click">
+
+    <label for="click" class="menu">
+     
+        <div class="toggle" onclick="expand()">
+            <p>Xxxx</p>
+        </div>
+
+        <div class="items" id="items">
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="" id="last-item">Home</a>
+        </div>
+    </label>
+
+    <script>
+        var state = false;
+        
+        function expand() {
+            // console.log(state);
+            if (state == false) {
+                document.getElementById('items').style.transform = "scaleX(1)"
+                document.getElementById('toggle').style.transform = "rotate(45deg)"
+            } else {
+                document.getElementById('items').style.transform = "scaleX(0)"
+                document.getElementById('toggle').style.transform = "rotate(0deg)"
+                state = false;
+                console.log(state);
+            }
+        }
+    </script>
+</body>
+
+</html>

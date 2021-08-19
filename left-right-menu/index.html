@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        background: #1c6454;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    li {
+        font-size: 24px;
+        float: left;
+        text-align: center;
+        justify-content: center;
+        width: 5em;
+    }
+
+    .left-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+
+    }
+
+    i {
+        font-size: 38px;
+    }
+
+    .left-button {
+        height: 38px;
+        width: 6px;
+        background: black;
+        margin-left: 20px;
+        border-radius: 10px;
+        opacity: 1;
+        transition: 1s;
+
+    }
+    .right-button {
+        height: 38px;
+        width: 6px;
+        background: black;
+        margin-right: 20px;
+        border-radius: 10px;
+        opacity: 1;
+        transition: 1s;
+padding: 0vh;
+    }
+    
+
+    .left-button::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 38px;
+        width: 6px;
+        background: black;
+        border-radius: 10px;
+        transition: 1s;
+        transform: translateX(10px)
+    }
+    .right-button::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 38px;
+        width: 6px;
+        background: black;
+        border-radius: 10px;
+        transition: 1s;
+        transform: translateX(10px)
+    }
+
+    .left-button::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 38px;
+        width: 6px;
+        background: black;
+        border-radius: 10px;
+        transition: 1s;
+
+        transform: translateX(-10px)
+    }
+    .right-button::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 38px;
+        width: 6px;
+        background: black;
+        border-radius: 10px;
+        transition: 1s;
+        transform: translateX(-10px)
+    }
+
+    .container:hover .left-button {
+        transform: rotate(90deg) translateX(20px) translateY(-38px);
+        opacity: 0;
+    }
+    .container:hover .right-button {
+        transform: rotate(-90deg) translateX(-20px) translateY(-38px) ;
+        opacity: 0;
+    }
+
+    .container:hover .left-button::before {
+        transform: translateY(38px);
+        opacity: 0;
+    }
+    .container:hover .right-button::before {
+        transform: translateY(-38px);
+        opacity: 0;
+    }
+
+    .container:hover .left-button::after {
+        transform: translateY(-38px);
+
+        opacity: 0;
+    }
+    .container:hover .right-button::after {
+        transform: translateY(38px);
+
+        opacity: 0;
+    }
+
+    .container:hover .items-left {
+        transform: scaleX(1);
+    }
+
+    .container:hover .items-right {
+        transform: scaleX(1);
+    }
+
+    .items-left {
+        display: flex;
+        flex-direction: row;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 1s;
+    }
+
+    .items-right {
+        display: flex;
+        flex-direction: row;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: 1s;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="left-menu">
+                <div class="left-button">
+                </div>
+
+                <div class="items-left">
+                    <ul>
+                        <li>Home</li>
+                        <li>products</li>
+                        <li>new</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="title">
+                <h1>Warstron</h1>
+            </div>
+            <div class="right-menu">
+
+                <div class="items-right">
+                    <ul>
+                        <li>Acount</li>
+                        <li>Orders</li>
+                        <li>cart</li>
+                    </ul>
+
+                </div>
+                <div class="right-button">
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+</body>
+
+</html>
